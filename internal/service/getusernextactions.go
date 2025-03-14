@@ -8,6 +8,9 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// GetUserNextActions calculates and returns user's possible next actions probabilities.
+// In case when there is no data, empty response will be returned.
+// Example response: {"ADD_CONTACT":0.33,"EDIT_CONTACT":0.33,"VIEW_CONTACTS":0.34}
 func (s *Service) GetUserNextActions(resp http.ResponseWriter, req *http.Request) {
 	vars := mux.Vars(req)
 	id := vars["id"]

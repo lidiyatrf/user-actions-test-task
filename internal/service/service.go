@@ -15,6 +15,7 @@ type Service struct {
 	Actions map[int][]Action
 }
 
+// New creates new service and populates actions and users from files specified in config.
 func New(config config.Config) (*Service, error) {
 	var users []User
 	if err := readDataFromFile(config.UsersFilePath, &users); err != nil {

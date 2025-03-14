@@ -11,6 +11,8 @@ type CountResponse struct {
 	Count int `json:"count"`
 }
 
+// GetUserActionsCount returns response with count of user actions by user id.
+// Example response: {"count":49}
 func (s *Service) GetUserActionsCount(resp http.ResponseWriter, req *http.Request) {
 	vars := mux.Vars(req)
 	id := vars["id"]

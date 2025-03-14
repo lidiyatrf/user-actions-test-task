@@ -4,6 +4,9 @@ import (
 	"net/http"
 )
 
+// GetReferralIndexes calculates and returns refferal indexes for all users.
+// Referral index is the total number of individual users invited directly or indirectly by this user.
+// Example response: {"0":0,"1":1,"10":1,"100":0,"101":0,"102":0,"103":0,"104":3, ...}
 func (s *Service) GetReferralIndexes(resp http.ResponseWriter, req *http.Request) {
 	result, err := s.calculateReferralIndexes()
 	if err != nil {
