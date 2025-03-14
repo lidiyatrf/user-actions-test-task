@@ -2,10 +2,10 @@ Simple web app to get user info, their action count, possible next actions, and 
 
 There are 4 REST endpoints:
 
-GET /users/{id}
-GET /users/{id}/actions/count
-GET /users/{id}/actions/{actionType}/next
-GET /referralIndexes
+* GET /users/{id}
+* GET /users/{id}/actions/count
+* GET /users/{id}/actions/{actionType}/next
+* GET /referralIndexes
 
 Endpoints don't have any authentication. App has in-memory storage only.
 
@@ -23,6 +23,7 @@ The port can be specified but is not required; the default is 8080.
 <h3>How to verify</h3>
 
 <h4>Get user by user id</h4>
+
 ```
 curl --header "Content-Type: application/json" http://localhost:8080/users/1
 ```
@@ -33,6 +34,7 @@ Result:
 ```
 
 <h4>Get user actions count</h4>
+
 ```
 curl --header "Content-Type: application/json" http://localhost:8080/users/1/actions/count
 ```
@@ -43,6 +45,7 @@ Result:
 ```
 
 <h4>Get user next possible actions</h4>
+
 ```
 curl --header "Content-Type: application/json" http://localhost:8080/users/100/actions/EDIT_CONTACT/next
 ```
@@ -53,6 +56,7 @@ Result:
 ```
 
 <h4>Get users' referral indexes</h4>
+
 ```
 curl --header "Content-Type: application/json" http://localhost:8080/referralIndexes
 ```
